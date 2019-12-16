@@ -2,7 +2,7 @@ import React from "react";
 
 import LeaderboardRow from "./LeaderboardRow";
 
-const LeaderBoard = ({ leaders, team }) => {
+const Leaderboard = ({ leaders, team }) => {
   const getFirstTen = () => leaders.slice(0, 10);
 
   const getAroundMe = () => {
@@ -23,6 +23,7 @@ const LeaderBoard = ({ leaders, team }) => {
   const getLeaders = () => {
     return team ? getAroundMe() : getFirstTen();
   };
+
   return (
     <>
       {leaders &&
@@ -37,4 +38,4 @@ const LeaderBoard = ({ leaders, team }) => {
   );
 };
 
-export default LeaderBoard;
+export default Leaderboard;

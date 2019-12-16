@@ -2,20 +2,21 @@ import React from "react";
 import styled from "styled-components";
 
 import ContentRow from "./layout/ContentRow";
+import { orderColumnWidth, clicksColumnPadding } from "../constants";
 
 const Order = styled.div`
   display: flex;
   justify-content: center;
-  min-width: 14%;
+  min-width: ${orderColumnWidth};
 `;
 
 const Team = styled.div`
   word-break: break-all;
-  padding: 1rem 0;
+  padding: 0.6rem 0;
 `;
 
 const Clicks = styled.div`
-  padding: 0 2rem;
+  padding: ${clicksColumnPadding};
   display: flex;
   align-items: center;
 `;

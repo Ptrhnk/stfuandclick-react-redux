@@ -10,11 +10,14 @@ import HeaderRow from "../layout/HeaderRow";
 import Background from "../layout/Background";
 import PageContainer from "../layout/PageContainer";
 import Content from "../layout/Content";
-import LeaderBoard from "../LeaderBoard";
+import Leaderboard from "../Leaderboard";
 import { Button } from "../Button";
-import { increment, setSession } from "../../actions/clickActions";
+import { increment } from "../../actions/clickActions";
+import { setSession } from "../../actions/sessionActions";
 import { fetchData } from "../../actions/leadersActions";
 import { appliftingBlue } from "../../constants";
+import Footer from "../layout/Footer";
+import ContentHeading from "../layout/ContentHeading";
 
 const Box = styled.div`
   display: flex;
@@ -75,9 +78,11 @@ const ClickPage = ({
               </Box>
             </HeaderRow>
           </Header>
+          <ContentHeading />
           <Content>
-            <LeaderBoard leaders={leaders} team={team} />
+            <Leaderboard leaders={leaders} team={team} />
           </Content>
+          <Footer>{"Want to be top? STFU and click!"}</Footer>
         </PageContainer>
       </Background>
     </>

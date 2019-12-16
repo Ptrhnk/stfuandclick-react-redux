@@ -12,9 +12,11 @@ import { Button } from "../Button";
 import { Input } from "../Input";
 import { increment } from "../../actions/clickActions";
 import { fetchData } from "../../actions/leadersActions";
-import { appliftingBlue } from "../../constants";
+import { appliftingBlue, globalWhite } from "../../constants";
 import Content from "../layout/Content";
-import LeaderBoard from "../LeaderBoard";
+import Leaderboard from "../Leaderboard";
+import Footer from "../layout/Footer";
+import ContentHeading from "../layout/ContentHeading";
 
 const TopTen = styled.div`
   font-size: 1.8rem;
@@ -22,7 +24,11 @@ const TopTen = styled.div`
   padding: 0.6rem 1.8rem;
   border-radius: 0.5rem;
   background-color: ${appliftingBlue};
-  color: white;
+  color: ${globalWhite};
+`;
+
+const AlignedRow = styled(HeaderRow)`
+  align-items: flex-end;
 `;
 
 const TopTenPage = ({ leaders, fetchData, increment }) => {
@@ -52,27 +58,28 @@ const TopTenPage = ({ leaders, fetchData, increment }) => {
       <Background>
         <PageContainer>
           <Header>
-            <HeaderRow>
+            <AlignedRow>
               <Input value={inputText} onChange={e => onChange(e)} />
               <Button onClick={e => handleClick(e)} small />
-            </HeaderRow>
+            </AlignedRow>
             <HeaderRow>
               <TopTen>{"TOP 10 Clickers"}</TopTen>
             </HeaderRow>
           </Header>
+          <ContentHeading />
           <Content>
-            <LeaderBoard leaders={leaders} />
+            <Leaderboard leaders={leaders} />
           </Content>
+          <Footer>{"Want to be top? STFU and click!"}</Footer>
         </PageContainer>
       </Background>
     </>
   );
 };
 
-const mapStateToProps = ({ leaders, clicks, session }) => ({
+const mapStateToProps = ({ leaders, clicks }) => ({
   leaders,
-  clicks,
-  session
+  clicks
 });
 
 export default connect(mapStateToProps, { fetchData, increment })(TopTenPage);

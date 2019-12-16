@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import { appliftingBlue } from "../../constants";
+import { appliftingBlue, globalWhite } from "../../constants";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   flex-grow: 1;
-  height: 80%;
+  height: 90%;
   border-radius: 0.8rem;
   max-width: 42%;
-  border: 3px solid ${appliftingBlue};
-  background-color: white;
+  border: 5px solid ${appliftingBlue};
+  background-color: ${globalWhite};
   overflow: hidden;
 
   @media (max-width: 1200px) {
