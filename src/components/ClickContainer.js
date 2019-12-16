@@ -29,21 +29,20 @@ const Clicks = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: space-between;
   flex-direction: row;
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin: 1rem 0;
 `;
 
 const Box = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 
 const Counter = styled.div`
-  font-size: 2rem;
+  font-size: 3.8rem;
   color: ${appliftingBlue};
 `;
 
@@ -69,8 +68,10 @@ const ClickContainer = ({ leaders, clicks, increment, team }) => {
         return;
       }
       history.push(`/${inputText}`);
+      increment(inputText, session);
+    } else {
+      increment(team, session);
     }
-    increment(team, session);
   };
 
   const onChange = e => {

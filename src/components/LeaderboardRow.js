@@ -5,29 +5,33 @@ import { appliftingBlue } from "../constants";
 const Row = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-shrink: 0;
+
   background-color: ${({ current, order }) =>
     current ? `${appliftingBlue}` : order % 2 ? "#a4d4fc" : "#a4c5fc"};
-  height: ${({ current }) => (current ? "40px" : "30px")};
-  font-size: 0.9rem;
+  font-size: ${({ current }) => (current ? "2.6rem" : "1.5rem")};
+  font-weight: ${({ current }) => (current ? "600" : "400")};
+  color: ${({ current }) => (current ? "white" : " black")};
   overflow: hidden;
 `;
 
 const Order = styled.div`
-  margin: 0 30px;
-  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  min-width: 14%;
 `;
 
 const Team = styled.div`
-  margin-right: 20px;
   word-break: break-all;
+  padding: 1rem 0;
 `;
 
 const Clicks = styled.div`
-  margin-right: 10px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
 `;
 
 const TeamInfo = styled.div`

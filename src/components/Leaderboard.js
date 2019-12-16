@@ -25,10 +25,13 @@ const Leaderboard = ({ leaders, clicks, fetchData, team }) => {
 
   const getAroundMe = () => {
     const myClicks = leaders.find(l => l.team === team);
+    if (!myClicks) {
+      return [{ team: "This team doesn't exist, click to create!" }];
+    }
     const myOrder = myClicks && myClicks.order;
     if (myOrder < 4) {
       return leaders.slice(0, 7);
-    } else if (myOrder > leaders.length) {
+    } else if (myOrder > leaders.length - 3) {
       return leaders.slice(leaders.length - 7, leaders.length);
     } else {
       return leaders.slice(myOrder - 4, myOrder + 3);

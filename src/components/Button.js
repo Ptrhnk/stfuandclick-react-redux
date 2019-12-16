@@ -8,8 +8,9 @@ const ClickBtn = styled.button`
   background-color: ${appliftingBlue};
   color: white;
   border-radius: 0.5rem;
-  padding: 2rem 0;
-  font-size: 1.8rem;
+  padding: 3.4rem 0;
+  font-size: 3.6rem;
+  letter-spacing: 0.4rem;
   border: none;
   outline: none;
 `;

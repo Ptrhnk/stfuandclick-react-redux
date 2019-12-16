@@ -23,11 +23,11 @@ const App = () => {
 const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;
+    font-size: 62.5%;
   }
   body {
-    @import url('https://fonts.googleapis.com/css?family=Poppins');
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
     font-family: 'Poppins', sans-serif;
-    font-size: 62.5%;
     letter-spacing: .8px;
     position: fixed;
     top: 0;
