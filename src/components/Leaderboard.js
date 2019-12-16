@@ -1,26 +1,8 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import React from "react";
 
 import LeaderboardRow from "./LeaderboardRow";
-import { fetchData } from "../actions/leadersActions";
 
-const Content = styled.div`
-  left: 0;
-  width: 100%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-`;
-
-const Leaderboard = ({ leaders, clicks, fetchData, team }) => {
-  useEffect(() => {
-    fetchData();
-  }, [clicks, fetchData]);
-
+const LeaderBoard = ({ leaders, team }) => {
   const getFirstTen = () => leaders.slice(0, 10);
 
   const getAroundMe = () => {
@@ -41,9 +23,8 @@ const Leaderboard = ({ leaders, clicks, fetchData, team }) => {
   const getLeaders = () => {
     return team ? getAroundMe() : getFirstTen();
   };
-
   return (
-    <Content>
+    <>
       {leaders &&
         getLeaders().map((leader, key) => (
           <LeaderboardRow
@@ -52,13 +33,8 @@ const Leaderboard = ({ leaders, clicks, fetchData, team }) => {
             current={leader.team === team}
           />
         ))}
-    </Content>
+    </>
   );
 };
 
-const mapStateToProps = ({ leaders, clicks }) => ({
-  leaders,
-  clicks
-});
-
-export default connect(mapStateToProps, { fetchData })(Leaderboard);
+export default LeaderBoard;

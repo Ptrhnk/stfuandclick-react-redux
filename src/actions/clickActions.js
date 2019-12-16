@@ -1,4 +1,4 @@
-import { INCREMENT } from "./types";
+import { INCREMENT, SET_SESSION } from "./types";
 import { incrementCountAsync } from "../lib/getLeaders";
 
 export const increment = (team, session) => dispatch => {
@@ -8,4 +8,11 @@ export const increment = (team, session) => dispatch => {
       payload: clicks
     })
   );
+};
+
+export const setSession = session => dispatch => {
+  dispatch({
+    type: SET_SESSION,
+    session
+  });
 };

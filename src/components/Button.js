@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { appliftingBlue } from "../constants";
 
 const ClickBtn = styled.button`
-  width: ${({ hasTeam }) => (hasTeam ? "100%" : "50%")};
+  width: ${({ small }) => (small ? "50%" : "100%")};
   background-color: ${appliftingBlue};
   color: white;
   border-radius: 0.5rem;
@@ -15,9 +15,9 @@ const ClickBtn = styled.button`
   outline: none;
 `;
 
-export const Button = ({ onClick, hasTeam }) => {
+export const Button = ({ onClick, small }) => {
   return (
-    <ClickBtn onClick={onClick} hasTeam={hasTeam}>
+    <ClickBtn onClick={onClick} small={small}>
       {" "}
       CLICK!{" "}
     </ClickBtn>

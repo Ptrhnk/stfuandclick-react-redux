@@ -4,19 +4,20 @@ import { Provider } from "react-redux";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 import store from "./store";
-import AppContainer from "./components/layout/AppContainer";
+import ClickPage from "./components/pages/ClickPage";
+import TopTenPage from "./components/pages/TopTenPage";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter>
         <GlobalStyle />
         <Switch>
-          <Route path="/:team" component={AppContainer} />
-          <Route exact path="/" component={AppContainer} />
+          <Route path="/:team" component={ClickPage} />
+          <Route exact path="/" component={TopTenPage} />
         </Switch>
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   );
 };
 
